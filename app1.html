@@ -1,0 +1,82 @@
+<!DOCTYPE html> <html>
+<head>
+<meta charset="UTF-8">
+<title>Fake News Detection System</title> <link
+href='https://fonts.googleapis.com/css?family=Pacifico ' rel='stylesheet' type='text/css'>
+<link
+href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link
+href='https://fonts.googleapis.com/css?family=Hind:300 ' rel='stylesheet' type='text/css'>
+<link
+href='https://fonts.googleapis.com/css?family=Open+San s+Condensed:300' rel='stylesheet' type='text/css'>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+input[type=text], select, textarea {
+width: 50%;
+padding: 10px;
+border: 3px solid #ccc; border-radius: 1px; box-sizing: border-box; margin-top: 6px; margin-bottom: 16px; resize: horizontal;
+} 
+button {
+  background: #76b852;
+font-weight: 900;
+padding: 14px 10px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 52%; 
+font-size: 25px;
+background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
+button:hover {
+  opacity: 0.8;
+}
+h1 {
+text-align: center;
+font-family: 'Signika', sans-serif;
+font-weight: 600;
+width: 50%;
+align-items: center;
+justify-content: center;
+padding: 10px 10px;
+box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+display: inline-block;
+background: white;
+border-radius: 10px;
+}
+p{
+text-align: center;
+}
+div {
+text-align: center;
+}
+body {
+     background: #e7f5ff;
+      /* Green background with 30% opacity */
+}
+.container{
+     margin: 10% auto;
+  width: 70%;
+  padding: 10px;
+}
+   </style>
+</head>
+<body>
+<div class="container">
+     <div class="results">
+          {% if prediction == [[False]]%}
+     <h1 style="color:red;">Looking Spam News 📰⚠</h1>
+          {% elif prediction == [[True]]%}
+     <h1 style="color:green;"><b>Looking Real News 📰 </b></h1>
+     
+     {% endif %}
+            </div>
+     
+         <form action="http://127.0.0.1:5000/" method="POST">
+     
+     <button type="submit" class="btn btn-primary btn-block btn-large">Predict For Another News</button>
+     
+             </form>
+</div>
+</body>
+</html>
